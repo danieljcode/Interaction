@@ -1,0 +1,28 @@
+{
+  "name": "interaction",
+  "version": "1.0.0",
+  "description": "A discord bot for helping interactions",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "nodemon ./main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljcode/Interaction.git"
+  },
+  "keywords": [
+    "Discord",
+    "bot"
+  ],
+  "author": "Daniel John (danieljcode)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danieljcode/Interaction/issues"
+  },
+  "homepage": "https://github.com/danieljcode/Interaction",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "node": "^15.4.0"
+  }
+}
