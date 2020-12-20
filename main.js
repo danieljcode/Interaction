@@ -8,9 +8,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    MessageHandler(message, (data)=>{
-        console.log(data);
-    })
+    MessageHandler(message);
 });
 
 client.login(token);

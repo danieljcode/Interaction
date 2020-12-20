@@ -23,6 +23,7 @@
   "homepage": "https://github.com/danieljcode/Interaction",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "node": "^15.4.0"
+    "node": "^15.4.0",
+    "request": "^2.88.2"
   }
 }
