@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
-
 const {prefix} = require("../config/prefix.json");
+
+//Handlers
 const TimeRequestHandler = require("./time.request.handler");
 const WeatherRequestHandler = require("./weather.request.handler");
+const TranslateHandler = require("./google.translate.handler");
 
 function MessageHandler(message) {
 
@@ -72,6 +74,31 @@ function MessageHandler(message) {
 
         } catch (e) {
             return message.channel.send(`${message.author} We were unable to get the current weather for the location you requested... Please try again later.`)
+        }
+    }
+
+
+    if(command == "translate"){
+        if (!args.length) {
+            return message.channel.send(`Translate: You have not provided a language to translate to ${message.author}`)
+        }
+        if(args.length < 2){
+            return message.channel.send(`Translate: You have not provided a language to translate to and some text to be translated ${message.author}`)
+        }
+
+
+        try{
+
+            var text = args.slice(1, args.length);
+
+            TranslateHandler(text, args[0], (response)=>{
+                if(response.text == null || response.text == undefined){
+                    return message.channel.send(`${message.author} We were unable to get the a translation either your language wasn't supported or there is a temporarily outage on our end.`)
+                } 
+                message.channel.send(response.text);
+            })
+        }catch(e){
+            return message.channel.send(`${message.author} We were unable to get the a translation either your language wasn't supported or there is a temporarily outage on our end.`)
         }
     }
 }
