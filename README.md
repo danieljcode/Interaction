@@ -17,4 +17,4 @@ A discord bot designed to help interactions!
 - Open in visualStudioCode
 - Run `npm install` to install all dependencies
 - add your Discord bots token to `./config/bot.token.json`
-- Run `npm run development
+- Run `npm run development`
